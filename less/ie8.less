@@ -1,0 +1,64 @@
+@import 'variables.less';
+header #main-nav a {
+	font-size: 14px;
+}
+header #main-nav ul.main-level {
+    @media (max-width:@screen-sm-max) and (min-width:@screen-sm-min) {
+        li {
+            a {
+                font-size: 12px;
+            }
+            ul.sub-level li a {
+                font-size: 12px;
+            }
+        }
+    }
+}
+.btn {
+	font-size: 14px;
+}
+.spot-marketing {
+    .item {
+        h2 {
+            font-size: 23px;
+        }
+        p {
+            height: 200px;
+        }
+    }
+    @media (max-width:@screen-lg-max) and (min-width:@screen-lg-min) {
+        .item {
+            h2 {
+                height: 80px;
+                min-height: 0;
+            }
+            p {
+                height: 256px;
+            }
+        }
+    }
+    @media (max-width:@screen-md-max) and (min-width:@screen-md-min) {
+        .item {
+            h2 {
+                height: 84px;
+                min-height: 0;
+            }
+            p {
+                height: 312px;
+            }
+        }
+    }
+    @media (max-width:@screen-sm-max) and (min-width:@screen-sm-min) {
+        .item {
+            h2 {
+                height: 76px;
+                min-height: 0;
+                font-size: 18px;
+                padding-right: 10px;
+            }
+            p {
+                height: 308px;
+            }
+        }
+    }
+}

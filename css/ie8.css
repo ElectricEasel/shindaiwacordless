@@ -1,0 +1,49 @@
+header #main-nav a {
+  font-size: 14px;
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  header #main-nav ul.main-level li a {
+    font-size: 12px;
+  }
+  header #main-nav ul.main-level li ul.sub-level li a {
+    font-size: 12px;
+  }
+}
+.btn {
+  font-size: 14px;
+}
+.spot-marketing .item h2 {
+  font-size: 23px;
+}
+.spot-marketing .item p {
+  height: 200px;
+}
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .spot-marketing .item h2 {
+    height: 80px;
+    min-height: 0;
+  }
+  .spot-marketing .item p {
+    height: 256px;
+  }
+}
+@media (max-width: 1199px) and (min-width: 992px) {
+  .spot-marketing .item h2 {
+    height: 84px;
+    min-height: 0;
+  }
+  .spot-marketing .item p {
+    height: 312px;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  .spot-marketing .item h2 {
+    height: 76px;
+    min-height: 0;
+    font-size: 18px;
+    padding-right: 10px;
+  }
+  .spot-marketing .item p {
+    height: 308px;
+  }
+}
