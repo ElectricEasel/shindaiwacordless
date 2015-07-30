@@ -7291,7 +7291,7 @@ footer .policy {
   width: 100%;
 }
 #professional-durability {
-  background: url(/images/warranty-bg) center 0 repeat-x #ffffff;
+  background: url(/images/warranty-bg.jpg) center 0 repeat-x #ffffff;
   background-size: auto 100%;
   padding: 35px 0;
   min-height: 534px;
@@ -7421,7 +7421,7 @@ footer .policy {
 }
 #faqs {
   padding: 50px 0 75px;
-  background: url(/images/faqs-bg) center 0 repeat-x #ffffff;
+  background: url(/images/faqs-bg.jpg) center 0 repeat-x #ffffff;
   background-size: auto 100%;
   text-align: center;
 }
