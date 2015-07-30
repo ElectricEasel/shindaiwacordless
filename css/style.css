@@ -6569,6 +6569,16 @@ button.close {
     display: none !important;
   }
 }
+@media (max-width: 480px) {
+  .desktop-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 481px) {
+  .mobile-sm {
+    display: none !important;
+  }
+}
 body {
   box-sizing: border-box;
   background: url(/images/bg-metal-thin.jpg) left top repeat;
@@ -6706,11 +6716,11 @@ th {
 }
 @media (max-width: 767px) {
   header #header-top {
-    padding: 16px 0 18px;
+    padding: 16px 0 8px;
     border-bottom: 7px solid #000000;
   }
   header.search-expanded #header-top {
-    padding-bottom: 72px;
+    padding-bottom: 28px;
   }
 }
 header {
@@ -6736,6 +6746,13 @@ header .logo {
 }
 header .lithium {
   margin: 16px 0 0 50px;
+}
+@media (max-width: 767px) {
+  header .lithium {
+    margin: 5px auto 0;
+    display: block;
+    width: 120px;
+  }
 }
 @media (max-width: 1199px) and (min-width: 768px) {
   header .logo img {
@@ -7158,25 +7175,51 @@ footer .policy {
 .banner img {
   width: 100%;
 }
-.banner .subline {
-  background: #e31937;
-  color: #ffffff;
-  font-size: 28px;
+@media (max-width: 480px) {
+  .banner {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  .banner .headline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    background: url(/images/overlay-bg.png) 0 0 no-repeat;
+    background-size: cover;
+  }
+  .banner .headline h4 {
+    font-family: "Helvetica Neue Cn", Arial, sans-serif;
+    font-weight: 900;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 25px;
+    max-width: 315px;
+    margin: 8px auto 0;
+    line-height: 1.1em;
+  }
+  .banner .headline img {
+    max-width: 100%;
+    width: auto;
+  }
+}
+ul.subline {
+  margin: 0 0 30px;
+  padding: 0 0 0 15px;
+}
+ul.subline li {
+  list-style: none;
+  padding-left: 33px;
+  margin-bottom: 10px;
   font-family: "Helvetica Neue Cn", Arial, sans-serif;
   font-weight: 900;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 3px 20px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -o-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-}
-@media (max-width: 380px) {
-  .banner .subline {
-    font-size: 22px;
-    padding: 6px 20px;
-  }
+  color: #000000;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.2em;
+  background: url(/images/bullet.png) 0 0 no-repeat;
 }
 #content {
   background: #ffffff;
@@ -7274,6 +7317,10 @@ footer .policy {
   font-weight: 900;
   background: url(/images/overlay-bg.png) 0 0 no-repeat;
   background-size: cover;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 @media (max-width: 1199px) and (min-width: 992px) {
   #professional-grade .overlay {
@@ -7287,6 +7334,18 @@ footer .policy {
     padding: 20px 0;
   }
 }
+@media (max-width: 767px) and (min-width: 481px) {
+  #professional-grade .overlay {
+    font-size: 30px;
+    padding: 12px 0;
+  }
+}
+@media (max-width: 480px) {
+  #professional-grade .overlay {
+    font-size: 34px;
+    padding: 20px 30px;
+  }
+}
 #professional-grade img {
   width: 100%;
 }
@@ -7296,7 +7355,7 @@ footer .policy {
   padding: 35px 0;
   min-height: 534px;
 }
-#professional-durability img.tool {
+#professional-durability img.tool.desktop {
   float: right;
 }
 #professional-durability h1 {
@@ -7370,6 +7429,34 @@ footer .policy {
   }
   #professional-durability img.sign {
     width: 260px;
+  }
+}
+@media (max-width: 767px) {
+  #professional-durability {
+    text-align: center;
+    padding: 25px 0 80px;
+    background: url(/images/warranty-bg.jpg) 8% bottom repeat-x #ffffff;
+    background-size: 1000px auto;
+  }
+  #professional-durability h1 {
+    font-size: 36px;
+    margin: 0 0 15px;
+  }
+  #professional-durability h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  #professional-durability img.sign {
+    width: 240px;
+    max-width: 100%;
+  }
+  #professional-durability img.tool {
+    width: 240px;
+    max-width: 100%;
+    margin-top: 24px;
+  }
+  #professional-durability .btn {
+    margin: 20px 0 0;
   }
 }
 #accessories {

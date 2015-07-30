@@ -61,6 +61,16 @@
         display: none !important;
     }
 }
+@media (max-width:@screen-mb-max) {
+    .desktop-sm {
+        display: none !important;
+    }
+}
+@media (min-width:@screen-tb-min) {
+    .mobile-sm {
+        display: none !important;
+    }
+}
 
 body {
     box-sizing: border-box;
@@ -189,11 +199,11 @@ h1, h2, h3, h4, h5, h6, td, th {
 }
 @media (max-width:@screen-tb-max) {
     header #header-top {
-        padding: 16px 0 18px;
+        padding: 16px 0 8px;
         border-bottom: 7px solid @black;
     }
     header.search-expanded #header-top {
-        padding-bottom: 72px;
+        padding-bottom: 28px;
     }
 }
 
@@ -220,6 +230,12 @@ header {
     }
     .lithium {
         margin: 16px 0 0 50px;
+
+        @media (max-width:@screen-tb-max) {
+            margin: 5px auto 0;
+            display: block;
+            width: 120px;
+        }
     }
     @media (max-width:@screen-md-max) and (min-width:@screen-sm-min) {
         .logo img {
@@ -647,20 +663,50 @@ footer {
     img {
         width: 100%;
     }
-    .subline {
-        background: @red;
-        color: @white;
-        font-size: 28px;
-        .sans2;
-        text-transform: uppercase;
-        text-align: center;
-        padding: 3px 20px;
-        .antialiased;
+    @media (max-width: @screen-mb-max) {
+        position: relative;
+        margin-bottom: 15px;
 
-        @media (max-width:380px) {
-            font-size: 22px;
-            padding: 6px 20px;
+        .headline {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+            background: url(/images/overlay-bg.png) 0 0 no-repeat;
+            background-size: cover;
+
+            h4 {
+                .sans2;
+                font-weight: 800;
+                color: @white;
+                font-size: 25px;
+                max-width: 315px;
+                margin: 8px auto 0;
+                line-height: 1.1em;
+            }
+            img {
+                max-width: 100%;
+                width: auto;
+            }
         }
+    }
+}
+ul.subline {
+    margin: 0 0 30px;
+    padding: 0 0 0 15px;
+
+    li {
+        list-style: none;
+        padding-left: 33px;
+        margin-bottom: 10px;
+        .sans2;
+        color: @black;
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 1.2em;
+        background: url(/images/bullet.png) 0 0 no-repeat;
     }
 }
 #content {
@@ -760,6 +806,7 @@ footer {
         .sans2;
         background: url(/images/overlay-bg.png) 0 0 no-repeat;
         background-size: cover;
+        .antialiased;
 
         @media (max-width:@screen-md-max) and (min-width:@screen-md-min) {
             font-size: 60px;
@@ -768,6 +815,14 @@ footer {
         @media (max-width:@screen-sm-max) and (min-width:@screen-sm-min) {
             font-size: 50px;
             padding: 20px 0;
+        }
+        @media (max-width:@screen-tb-max) and (min-width:@screen-tb-min) {
+            font-size: 30px;
+            padding: 12px 0;
+        }
+        @media (max-width:@screen-mb-max) {
+            font-size: 34px;
+            padding: 20px 30px;
         }
     }
     img {
@@ -780,7 +835,7 @@ footer {
     padding: 35px 0;
     min-height: 534px;
 
-    img.tool {
+    img.tool.desktop {
         float: right;
     }
     h1 {
@@ -843,6 +898,33 @@ footer {
         min-height: 378px;
         img.sign {
             width: 260px;
+        }
+    }
+    @media (max-width:@screen-tb-max) {
+        text-align: center;
+        padding: 25px 0 80px;
+        background: url(/images/warranty-bg.jpg) 8% bottom repeat-x #ffffff;
+        background-size: 1000px auto;
+
+        h1 {
+            font-size: 36px;
+            margin: 0 0 15px;
+        }
+        h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        img.sign {
+            width: 240px;
+            max-width: 100%;
+        }
+        img.tool {
+            width: 240px;
+            max-width: 100%;
+            margin-top: 24px;
+        }
+        .btn {
+            margin: 20px 0 0;
         }
     }
 }
