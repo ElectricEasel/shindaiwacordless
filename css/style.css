@@ -6616,6 +6616,11 @@ body.expanded {
   background: #ffffff;
   padding-bottom: 15px;
 }
+@media (max-width: 767px) {
+  .content {
+    padding-bottom: 0;
+  }
+}
 p,
 li,
 span,
@@ -7221,9 +7226,6 @@ ul.subline li {
   line-height: 1.2em;
   background: url(/images/bullet.png) 0 0 no-repeat;
 }
-#content {
-  background: #ffffff;
-}
 .spot-marketing {
   margin-bottom: 30px;
 }
@@ -7297,7 +7299,7 @@ ul.subline li {
     margin-bottom: 20px;
   }
   .spot-marketing .item h3 {
-    font-size: 22px;
+    font-size: 30px;
   }
 }
 #professional-grade {
@@ -7449,11 +7451,17 @@ ul.subline li {
   #professional-durability img.sign {
     width: 240px;
     max-width: 100%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
   }
   #professional-durability img.tool {
     width: 240px;
     max-width: 100%;
     margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
   #professional-durability .btn {
     margin: 20px 0 0;
@@ -7485,6 +7493,14 @@ ul.subline li {
 }
 #accessories h1 strong {
   text-transform: uppercase;
+  font-weight: 900;
+}
+#accessories h4 {
+  font-size: 20px;
+  font-family: "Helvetica Neue Cn", Arial, sans-serif;
+  font-weight: 900;
+  color: #000000;
+  text-transform: uppercase;
 }
 #accessories .btn {
   padding: 14px 30px;
@@ -7506,6 +7522,36 @@ ul.subline li {
     margin-bottom: 15px;
   }
 }
+@media (max-width: 767px) {
+  #accessories {
+    background: url(/images/bg-gray2.jpg) 0 bottom no-repeat;
+    background-size: 100% 971px;
+    text-align: center;
+    padding-bottom: 55px;
+  }
+  #accessories .text {
+    position: static;
+    width: 100%;
+  }
+  #accessories h1 {
+    font-size: 34px;
+    line-height: 1.15em;
+    margin-bottom: 20px;
+  }
+  #accessories h1 strong {
+    display: block;
+  }
+  #accessories h4 {
+    max-width: 225px;
+    margin: 10px auto 25px;
+    min-height: 40px;
+    line-height: 1.25em;
+  }
+  #accessories img {
+    width: auto;
+    max-width: 100%;
+  }
+}
 #faqs {
   padding: 50px 0 75px;
   background: url(/images/faqs-bg.jpg) center 0 repeat-x #ffffff;
@@ -7522,7 +7568,7 @@ ul.subline li {
 }
 #faqs ul {
   text-align: left;
-  margin: 0 0 45px;
+  margin: 0;
   padding: 0;
 }
 #faqs ul li {
@@ -7533,6 +7579,10 @@ ul.subline li {
   font-weight: 800;
   margin-bottom: 12px;
   line-height: 1.3em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 #faqs ul li strong {
   color: #44a736;
@@ -7542,4 +7592,25 @@ ul.subline li {
 }
 #faqs .btn {
   padding: 14px 65px;
+  margin-top: 33px;
+}
+@media (max-width: 767px) {
+  #faqs {
+    padding: 25px 0 90px;
+    background: url(/images/faqs-bg.jpg) 8% bottom repeat-x #ffffff;
+    background-size: 1000px auto;
+  }
+  #faqs h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  #faqs ul li {
+    font-size: 18px;
+  }
+  #faqs ul li strong {
+    font-size: 20px;
+  }
+  #faqs .btn {
+    margin-top: 20px;
+  }
 }

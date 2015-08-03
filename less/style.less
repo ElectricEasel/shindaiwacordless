@@ -109,6 +109,10 @@ body.expanded {
 .content {
     background: @white;
     padding-bottom: 15px;
+
+    @media (max-width:@screen-tb-max) {
+        padding-bottom: 0;
+    }
 }
 
 p, li, span, a, div {
@@ -709,9 +713,6 @@ ul.subline {
         background: url(/images/bullet.png) 0 0 no-repeat;
     }
 }
-#content {
-    background: @white;
-}
 .spot-marketing {
     margin-bottom: 30px;
     .item {
@@ -785,7 +786,7 @@ ul.subline {
         margin-bottom: 20px;
         .item {
             h3 {
-                font-size: 22px;
+                font-size: 30px;
             }
         }
     }
@@ -917,11 +918,17 @@ ul.subline {
         img.sign {
             width: 240px;
             max-width: 100%;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
         }
         img.tool {
             width: 240px;
             max-width: 100%;
             margin-top: 24px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
         }
         .btn {
             margin: 20px 0 0;
@@ -953,7 +960,14 @@ ul.subline {
 
         strong {
             text-transform: uppercase;
+            font-weight: 900;
         }
+    }
+    h4 {
+        font-size: 20px;
+        .sans2;
+        color: @black;
+        text-transform: uppercase;
     }
     .btn {
         padding: 14px 30px;
@@ -975,6 +989,36 @@ ul.subline {
             margin-bottom: 15px;
         }
     }
+    @media (max-width:@screen-tb-max) {
+        background: url(/images/bg-gray2.jpg) 0 bottom no-repeat;
+        background-size: 100% 971px;
+        text-align: center;
+        padding-bottom: 55px;
+
+        .text {
+            position: static;
+            width: 100%;
+        }
+        h1 {
+            font-size: 34px;
+            line-height: 1.15em;
+            margin-bottom: 20px;
+
+            strong {
+                display: block;
+            }
+        }
+        h4 {
+            max-width: 225px;
+            margin: 10px auto 25px;
+            min-height: 40px;
+            line-height: 1.25em;
+        }
+        img {
+            width: auto;
+            max-width: 100%;
+        }
+    }
 }
 #faqs {
     padding: 50px 0 75px;
@@ -991,7 +1035,7 @@ ul.subline {
     }
     ul {
         text-align: left;
-        margin: 0 0 45px;
+        margin: 0;
         padding: 0;
 
         li {
@@ -1001,6 +1045,7 @@ ul.subline {
             font-weight: 800;
             margin-bottom: 12px;
             line-height: 1.3em;
+            .antialiased;
 
             strong {
                 color: @green;
@@ -1012,5 +1057,28 @@ ul.subline {
     }
     .btn {
         padding: 14px 65px;
+        margin-top: 33px;
+    }
+    @media (max-width:@screen-tb-max) {
+        padding: 25px 0 90px;
+        background: url(/images/faqs-bg.jpg) 8% bottom repeat-x #ffffff;
+        background-size: 1000px auto;
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        ul {
+            li {
+                font-size: 18px;
+
+                strong {
+                    font-size: 20px;
+                }
+            }
+        }
+        .btn {
+            margin-top: 20px;
+        }
     }
 }
