@@ -23,6 +23,40 @@ $(document).ready(function(){
 			search.focus();
 		}
 	});
+
+	var marketingCarousel = $('#marketing-carousel');
+	marketingCarousel.owlCarousel({
+		dots: false,
+		responsive: {
+			0: {
+				autoplay:true,
+				items:1,
+				margin:0,
+				loop:true,
+				mouseDrag:true,
+				touchDrag:true,
+				pullDrag:true
+			},
+			480: {
+				autoplay:true,
+				items:2,
+				margin:25,
+				loop:true,
+				mouseDrag:true,
+				touchDrag:true,
+				pullDrag:true
+			},
+			768: {
+				autoplay:false,
+				items:3,
+				margin:25,
+				loop:false,
+				mouseDrag:false,
+				touchDrag:false,
+				pullDrag:false
+			}
+		}
+	});
 });
 
 $(window).load(function(){

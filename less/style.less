@@ -779,8 +779,13 @@ ul.subline {
             }
         }
     }
-    @media (max-width:@screen-tb-max) {
+    @media (max-width:@screen-tb-max) and (min-width:@screen-tb-min) {
         margin-bottom: 20px;
+        .item {
+            h3 {
+                font-size: 28px;
+            }
+        }
     }
     @media (max-width:@screen-mb-max) {
         margin-bottom: 20px;
