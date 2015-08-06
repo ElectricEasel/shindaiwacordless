@@ -1191,6 +1191,10 @@ ul.subline {
     .main {
         background: url(/images/bg-trees.jpg) center -70% no-repeat;
         padding-bottom: 100px;
+
+        @media (max-width:@screen-tb-max) {
+            padding-bottom: 30px;
+        }
     }
     .fade-top {
         margin-bottom: 50px;
@@ -1346,7 +1350,7 @@ ul.subline {
                 }
             }
         }
-        @media (max-width:@screen-mb-max) {
+        @media (max-width:@screen-tb-max) {
             h5 {
                 .sans2;
                 font-size: 20px;
