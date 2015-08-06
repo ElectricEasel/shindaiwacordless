@@ -37,7 +37,7 @@ $(document).ready(function(){
 				touchDrag:true,
 				pullDrag:true
 			},
-			480: {
+			481: {
 				autoplay:true,
 				items:2,
 				margin:25,
