@@ -115,18 +115,31 @@ p, li, span, a, div {
 h1, h2, h3, h4, h5, h6, td, th {
     line-height: 1em;
 }
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
 
 .content {
     background: @white;
     padding-bottom: 15px;
 
+    h2 {
+        .sans2;
+        color: @black;
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
     h3 {
         .sans2;
         color: @green;
         .antialiased;
         font-size: 36px;
         text-transform: uppercase;
-        margin: 0 0 15px;
+        margin-bottom: 15px;
     }
     p, li {
         .sans2;
@@ -140,6 +153,9 @@ h1, h2, h3, h4, h5, h6, td, th {
         }
     }
     @media (max-width:@screen-sm-max) and (min-width:@screen-sm-min) {
+        h2 {
+            font-ize: 26px;
+        }
         h3 {
             font-size: 30px;
         }
@@ -201,9 +217,15 @@ h1, h2, h3, h4, h5, h6, td, th {
         box-shadow: 0 6px 0 darken(@darkgreen, 15%);
     }
 }
+.btn-green-dark {
+    background: #2c871f;
+    box-shadow: 0 6px 0 #1c6411;
+    &:hover, &:focus {
+        background: darken(#2c871f, 15%);
+        box-shadow: 0 6px 0 darken(#1c6411, 15%);
+    }
+}
 .social {
-    padding: 0;
-    margin: 0;
     display: inline-block;
 
     li {
@@ -238,7 +260,6 @@ h1, h2, h3, h4, h5, h6, td, th {
         .sans2;
         color: @red;
         text-transform: uppercase;
-        margin: 0;
 
         span {
             line-height: 1em;
@@ -399,9 +420,6 @@ header {
         margin: 14px 0 12px;
 
         ul.main-level {
-            margin: 0;
-            padding: 0;
-
             li {
                 display: inline-block;
                 padding: 0 38px 0 15px;
@@ -410,15 +428,13 @@ header {
                 &.back {
                     display: none;
                 }
-                &:first-child {
+                &:nth-child(2) {
                     padding-left: 0;
                 }
                 &:last-child {
                     padding-right: 0;
                 }
                 ul.sub-level {
-                    margin: 0;
-                    padding: 0;
                     position: absolute;
                     z-index: 9999;
                     top: 100%;
@@ -487,6 +503,7 @@ header {
             @media (max-width:@screen-md-max) and (min-width:@screen-md-min) {
                 li {
                     padding-right: 3px;
+                    padding-left: 8px;
 
                     a {
                         font-size: 16px;
@@ -496,8 +513,8 @@ header {
             @media (max-width:@screen-sm-max) and (min-width:@screen-sm-min) {
 
                 li {
-                    padding-right: 6px;
-                    padding-left: 6px;
+                    padding-right: 5px;
+                    padding-left: 5px;
 
                     a {
                         font-size: 12px;
@@ -623,7 +640,6 @@ header {
             margin-bottom: 3px;
         }
         h6 {
-            margin: 0;
             .sans;
             font-size: 11px;
             color: @white;
@@ -774,8 +790,8 @@ footer {
     }
 }
 ul.subline {
-    margin: 0 0 30px;
-    padding: 0 0 0 15px;
+    margin-bottom: 30px;
+    padding-left: 15px;
 
     li {
         list-style: none;
@@ -799,7 +815,6 @@ ul.subline {
         .sans2;
         font-size: 58px;
         .antialiased;
-        margin: 0;
     }
     h6 {
         color: @white;
@@ -833,7 +848,6 @@ ul.subline {
             font-size: 42px;
             position: relative;
             padding: 20px 0;
-            margin: 0;
             text-align: center;
         }
         .img-holder {
@@ -963,7 +977,7 @@ ul.subline {
         color: @black;
         font-size: 44px;
         text-transform: uppercase;
-        margin: 0 0 45px;
+        margin-bottom: 45px;
     }
     .btn {
         margin-left: 40px;
@@ -1067,7 +1081,7 @@ ul.subline {
         font-size: 86px;
         .sans2;
         color: @red;
-        margin: 0 0 40px;
+        margin-bottom: 40px;
 
         strong {
             text-transform: uppercase;
@@ -1142,12 +1156,10 @@ ul.subline {
         font-size: 60px;
         .sans2;
         text-transform: uppercase;
-        margin: 0 0 40px;
+        margin-bottom: 40px;
     }
     ul {
         text-align: left;
-        margin: 0;
-        padding: 0;
 
         li {
             list-style: none;
@@ -1218,105 +1230,36 @@ ul.subline {
         img {
             max-width: 100%;
         }
-        table {
-            margin: 25px 0 50px;
-
-            td {
-                background: @grayLighter;
-                color: @black;
-                .sans2;
-                font-size: 28px;
-                font-weight: 800;
-                vertical-align: middle;
-
-                .half {
-                    display: inline-block;
-                    width: 50%;
-                    height: 100%;
-                    line-height: 76px;
-
-                    &:first-child {
-                        border-right: 1px solid @white;
-                    }
-                }
-            }
-            th {
-                vertical-align: top;
-
-                .half {
-                    float: left;
-                    width: 50%;
-                    font-size: 24px;
-                    text-transform: none;
-                    margin-top: 2px;
-                }
-            }
-            th, td:first-child {
-                background: @grayLight;
-                color: @white;
-                .sans2;
-                font-size: 26px;
-                text-transform: uppercase;
-                .antialiased;
-            }
-            td, th {
-                border: 2px solid @white;
-                border-collapse: collapse;
-                padding: 12px 20px;
-                text-align: center;
-                white-space: nowrap;
-                line-height: 1em;
-                height: 78px;
-
-                div, span {
-                    line-height: 1em;
-                }
-                &.wide {
-                    padding-left: 50px;
-                    padding-right: 50px;
-                }
-            }
-            td.split {
-                padding: 0;
-                vertical-align: middle;
-            }
-            th.split {
-                padding-right: 0;
-                padding-left: 0;
-            }
+        p {
+            margin-bottom: 30px;
         }
-        @media (max-width:@screen-lg-max) and (min-width:@screen-lg-min) {
-            table {
-                td {
-                    font-size: 26px;
-                }
-                td, th {
-                    padding-left: 10px;
-                    padding-right: 10px;
-                }
-            }
+        h5 {
+            .sans2;
+            font-size: 25px;
+            color: @black;
+            text-align: left;
+            text-transform: uppercase;
         }
-        @media (max-width:@screen-md-max) and (min-width:@screen-md-min) {
-            table {
-                td {
-                    font-size: 20px;
+        ul {
+            margin: 10px 0 60px;
 
-                    .half {
-                        line-height: 68px;
-                    }
-                }
-                th {
-                    .half {
-                        font-size: 18px;
-                    }
-                }
-                th, td:first-child {
-                    font-size: 22px;
-                }
-                td, th {
-                    height: 68px;
-                    padding-left: 10px;
-                    padding-right: 10px;
+            li {
+                font-weight: 400;
+                font-size: 25px;
+                list-style: none;
+                padding-left: 16px;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 10px;
+                    background: @black;
+                    height: 8px;
+                    width: 8px;
+                    border-radius: 50%;
                 }
             }
         }
@@ -1334,69 +1277,24 @@ ul.subline {
                 margin-left: auto;
                 margin-right: auto;
             }
-            p {
+            p, ul {
                 text-align: left;
-            }
-        }
-        @media (max-width:@screen-sm-max) and (min-width:@screen-sm-min) {
-            table {
-                display: inline-block;
-                margin-bottom: 30px;
-
-                td {
-                    font-size: 20px;
-
-                    .half {
-                        line-height: 68px;
-                    }
-                }
-                th {
-                    .half {
-                        font-size: 18px;
-                    }
-                }
-                th, td:first-child {
-                    font-size: 22px;
-                }
-                td, th {
-                    height: 68px;
-                    padding-left: 10px;
-                    padding-right: 10px;
-                }
             }
         }
         @media (max-width:@screen-tb-max) {
             h5 {
-                .sans2;
                 font-size: 20px;
-                color: @black;
-                text-align: left;
-                text-transform: uppercase;
-                margin: 20px 0 0;
+                margin-top: 20px;
             }
-            table {
-                margin: 10px 0 30px;
+            ul {
+                margin-bottom: 45px;
 
-                td {
-                    color: @black;
+                li {
                     font-size: 20px;
-                    .sans2;
-                    font-weight: 400;
-                    border: none;
-                    text-align: left;
-                    padding: 5px 5px 5px 0;
-                    height: auto;
-                    background: none;
-                    text-transform: none;
-                    vertical-align: top;
+                    padding-left: 0;
 
-                    &:first-child {
-                        color: @black;
-                        font-size: 20px;
-                        font-weight: 900;
-                        background: none;
-                        text-transform: none;
-                        min-width: 140px;
+                    &:before {
+                        display: none;
                     }
                 }
             }
@@ -1432,6 +1330,164 @@ ul.subline {
     }
     .spot-marketing {
         margin-top: 35px;
+    }
+}
+#contact-page {
+    .main {
+        background: url(/images/bg-trees.jpg) center 65% no-repeat;
+        padding-bottom: 100px;
+
+        @media (max-width:@screen-tb-max) {
+            background-position: center top;
+            padding-bottom: 65px;
+        }
+    }
+    .section {
+        margin-bottom: 50px;
+        h2 {
+            .sans2;
+            color: @black;
+            font-size: 27px;
+            font-weight: 800;
+            margin-bottom: 0;
+
+            strong {
+                font-size: 36px;
+                font-weight: 900;
+            }
+            span {
+                display: inline-block;
+                margin: 0 10px 0 6px;
+            }
+            @media (max-width:@screen-tb-max) {
+                font-size: 22px;
+
+                strong {
+                    font-size: 26px;
+                }
+            }
+        }
+        h3 {
+            text-transform: none;
+        }
+        p, li {
+            font-size: 25px;
+            margin: 0;
+
+            a {
+                color: @red;
+                text-decoration: underline;
+            }
+            strong {
+                font-weight: 900;
+            }
+            @media (max-width:@screen-tb-max) {
+                font-size: 18px;
+            }
+        }
+        ul {
+            margin-top: 15px;
+
+            li {
+                list-style: none;
+                padding-left: 16px;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 12px;
+                    background: @black;
+                    height: 8px;
+                    width: 8px;
+                    border-radius: 50%;
+                }
+            }
+            @media (max-width:@screen-tb-max) {
+                li {
+                    padding-left: 12px;
+
+                    &:before {
+                        top: 8px;
+                        height: 6px;
+                        width: 6px;
+                    }
+                }
+            }
+        }
+        .phone-numbers {
+            margin: 4px 0 25px;
+
+            h6 {
+                .sans2;
+                font-weight: 800;
+                color: @red;
+                font-size: 27px;
+                .antialiased;
+                text-transform: uppercase;
+
+                span {
+                    color: @black;
+                }
+                strong {
+                    font-weight: 900;
+                }
+            }
+            @media (max-width:@screen-tb-max) {
+                h6 {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}
+#technical-documents-page {
+    .main {
+        background: url(/images/bg-trees.jpg) center 25% no-repeat;
+        padding-bottom: 100px;
+        min-height: 585px;
+
+        @media (max-width:@screen-tb-max) {
+            background-position: center top;
+            padding-bottom: 65px;
+        }
+        input[type="text"] {
+            width: 100%;
+            background: #e7e7e7;
+            display: inline-block;
+            box-shadow: 0 6px 0 #d1d1d1;
+            border-radius: 5px;
+            padding: 15px 20px 4px;
+            border: none;
+            .sans2;
+            font-weight: 400;
+            color: #5b5b5b;
+            font-size: 25px;
+            line-height: 1em;
+
+            &::-webkit-input-placeholder {
+               color: #5b5b5b;
+            }
+
+            &:-moz-placeholder {
+               color: #5b5b5b;  
+            }
+
+            &::-moz-placeholder {
+               color: #5b5b5b;  
+            }
+
+            &:-ms-input-placeholder {  
+               color: #5b5b5b;  
+            }
+        }
+        .btn {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
 .tool-page {
@@ -1477,14 +1533,13 @@ ul.subline {
             color: @black;
             font-size: 66px;
             text-transform: uppercase;
-            margin: 0 0 10px;
+            margin-bottom: 10;
         }
         h4 {
             .sans2;
             color: @black;
             font-size: 44px;
             text-transform: uppercase;
-            margin: 0;
         }
         img {
             max-width: 100%;

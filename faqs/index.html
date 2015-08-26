@@ -44,13 +44,14 @@
 				<div id="backdrop" class="collapsed"></div>
 				<nav id="main-nav" class="collapsed">
 					<ul class="main-level">
-						<li><a href="/">Home</a></li>
+						<li class="mobile"><a href="/">Home</a></li>
 						<li><a href="/t3000">String Trimmer</a></li>
 						<li><a href="/eb6000">Handheld Blower</a></li>
 						<li><a href="/dh2000">Hedge Trimmer</a></li>
 						<li><a href="/accessories">Accessories</a></li>
 						<li><a href="javascript:void(0);">Dealer Locator</a></li>
 						<li><a href="/faqs">FAQS</a></li>
+						<li><a href="/contact-us">Contact</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -137,7 +138,7 @@
 		<div class="footer-above mobile">
 			<div class="container">
 				<div class="half">
-					<a class="btn btn-red" href="#">Contact Us</a>
+					<a class="btn btn-red" href="/contact-us">Contact Us</a>
 				</div><div class="half">
 					<a class="btn btn-red" href="#">Store Locator</a>
 				</div>
@@ -167,5 +168,42 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="/vendor/owl-carousel/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="/js/script.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var marketingCarousel = $('#marketing-carousel');
+			marketingCarousel.owlCarousel({
+				dots: false,
+				responsive: {
+					0: {
+						autoplay:true,
+						items:1,
+						margin:0,
+						loop:true,
+						mouseDrag:true,
+						touchDrag:true,
+						pullDrag:true
+					},
+					481: {
+						autoplay:true,
+						items:2,
+						margin:25,
+						loop:true,
+						mouseDrag:true,
+						touchDrag:true,
+						pullDrag:true
+					},
+					768: {
+						autoplay:false,
+						items:3,
+						margin:25,
+						loop:false,
+						mouseDrag:false,
+						touchDrag:false,
+						pullDrag:false
+					}
+				}
+			});
+		});
+	</script>
 </body>
 </html>

@@ -10,7 +10,7 @@ $(document).ready(function(){
 		$('#main-nav').toggleClass('collapsed');
 		$('body').toggleClass('expanded');
 		$('#backdrop').toggleClass('collapsed');
-	}
+	};
 
 	$('#search-icon').click(function(){
 		$('#search-bar').css('z-index','777');
@@ -23,44 +23,10 @@ $(document).ready(function(){
 			search.focus();
 		}
 	});
-
-	var marketingCarousel = $('#marketing-carousel');
-	marketingCarousel.owlCarousel({
-		dots: false,
-		responsive: {
-			0: {
-				autoplay:true,
-				items:1,
-				margin:0,
-				loop:true,
-				mouseDrag:true,
-				touchDrag:true,
-				pullDrag:true
-			},
-			481: {
-				autoplay:true,
-				items:2,
-				margin:25,
-				loop:true,
-				mouseDrag:true,
-				touchDrag:true,
-				pullDrag:true
-			},
-			768: {
-				autoplay:false,
-				items:3,
-				margin:25,
-				loop:false,
-				mouseDrag:false,
-				touchDrag:false,
-				pullDrag:false
-			}
-		}
-	});
 });
 
 $(window).load(function(){
-	$('ul.sub-level').each(function(){
+	$('#main-nav ul.sub-level').each(function(){
 		if($(this).parent().hasClass('special')) {
 			return 0;
 		}
@@ -76,10 +42,10 @@ $(window).load(function(){
 		}
 		var trueClass = false;
 		$(this).toggleClass('expanded');
-		$('ul.sub-level').css('height','0');
-		var height = $(this).children('ul.sub-level').attr('data-height');
+		$('#main-nav ul.sub-level').css('height','0');
+		var height = $(this).children('#main-nav ul.sub-level').attr('data-height');
 		if($(this).hasClass('expanded')) {
-			$(this).children('ul.sub-level').css('height',height);
+			$(this).children('#main-nav ul.sub-level').css('height',height);
 			trueClass = true;
 		}
 		parent.removeClass('expanded');
@@ -97,16 +63,16 @@ $(window).load(function(){
 		if($(this).hasClass('expanded')) {
 			return 0;
 		}
-		$('ul.main-level > li').hide();
+		$('main-nav ul.main-level > li').hide();
 		returnMenu.show();
 		$(this).show();
 		$(this).toggleClass('expanded');
-		$(this).children('ul.sub-level').css('height','auto');
+		$(this).children('#main-nav ul.sub-level').css('height','auto');
 	});
 	returnMenu.click(function(){
-		$('ul.sub-level').css('height','0');
+		$('#main-nav ul.sub-level').css('height','0');
 		parent.removeClass('expanded');
-		$('ul.main-level > li').show();
+		$('main-nav ul.main-level > li').show();
 		returnMenu.hide();
-	})
+	});
 })
