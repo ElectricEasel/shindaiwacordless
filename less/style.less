@@ -425,11 +425,21 @@ header {
                 padding: 0 38px 0 15px;
                 position: relative;
 
+                
+                &.active a, a:hover, &:focus {
+                    color: @red;
+                }
                 &.back {
                     display: none;
                 }
                 &:nth-child(2) {
                     padding-left: 0;
+
+                    ul.sub-level {
+                        @media (min-width:@screen-sm-min) {
+                            left: -15px;
+                        }
+                    }
                 }
                 &:last-child {
                     padding-right: 0;
@@ -438,7 +448,6 @@ header {
                     position: absolute;
                     z-index: 9999;
                     top: 100%;
-                    left: 0;
                     background: @black;
                     overflow: hidden;
                     @media (min-width:@screen-sm-min) {
@@ -452,12 +461,13 @@ header {
 
                         a {
                             display: block;
+                            color: @white;
                             width: 100%;
                             font-size: 15px;
                             border-bottom: 1px solid #d6d6d6;
                             padding: 3px 15px;
                         }
-                        a:hover, a:focus, a:active {
+                        a:hover, a:focus {
                             color: @red;
                         }
                     }
@@ -484,12 +494,6 @@ header {
             &:hover, &:focus {
                 text-decoration: none;
             }
-        }
-        a.active {
-            font-weight: bold;
-        }
-        a:hover, &:focus {
-            color: @red;
         }
         ul.main-level {
             @media (max-width:@screen-lg-max) and (min-width:@screen-lg-min) {
@@ -560,6 +564,9 @@ header {
                         -o-transition: height 0.2s linear;
                         transition: height 0.2s linear;
                     }
+                }
+                &.active a {
+                    color: @white;
                 }
                 &:last-child a {
                     border-bottom: none;
