@@ -1221,7 +1221,7 @@ ul.subline {
         }
     }
 }
-#accessories-page, #faqs-page, #contact-page, #technical-documents-page {
+#accessories-page, #faqs-page, #contact-page, #technical-documents-page, #product-registration-page {
     .main {
         background: url(/images/bg-trees.jpg) center top no-repeat;
     }
@@ -1516,6 +1516,135 @@ ul.subline {
         @media (max-width:@screen-mb-max) {
             .btn {
                 font-size: 13px;
+            }
+        }
+    }
+}
+.required {
+    &:before {
+        content: "*";
+        color: @red;
+    }
+}
+#product-registration-page {
+    h5 {
+        .sans2;
+        color: @red;
+        font-size: 25px;
+        font-weight: 400;
+        display: inline-block;
+    }
+    form {
+        overflow: hidden;
+        clear: both;
+        margin-top: 50px;
+        padding-bottom: 100px;
+    }
+    label {
+        display: block;
+        clear: both;
+        padding: 40px 0 15px;
+    }
+    span.required {
+        float: right;
+    }
+    .required, label, p, input[type="radio"] + span, input[type="checkbox"] + span {
+        .sans2;
+        color: @black;
+        font-size: 25px;
+        font-weight: 400;
+
+        @media (max-width:@screen-lg-max) and (min-width:@screen-lg-min) {
+            font-size: 24px;
+        }
+        @media (max-width:@screen-md-max) and (min-width:@screen-md-min) {
+            font-size: 19px;
+        }
+        @media (max-width:@screen-sm-max) and (min-width:@screen-sm-min) {
+            font-size: 19px;
+        }
+    }
+    label.inline {
+        .make-sm-column(3);
+        @media (min-width:@screen-sm-min) {
+            text-align: right;
+            clear: both;
+            vertical-align: middle;
+            line-height: 60px;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+    label.inline + input, label.inline + select + .bootstrap-select {
+        .make-sm-column(9);
+    }
+    .double {
+        label.inline {
+            .make-sm-column(3);
+            clear: none;
+        }
+        .bootstrap-select + label.inline {
+            .make-sm-column(1);
+        }
+        label.inline + input, label.inline + select + .bootstrap-select {
+            .make-sm-column(4);
+        }
+    }
+    .bootstrap-select {
+        padding: 0 !important;
+    }
+    input[type="text"], input[type="email"], input[type="tel"], .bootstrap-select .btn {
+        height: 60px;
+        margin-bottom: 20px;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        width: 100%;
+        box-shadow: none;
+        background: @white;
+        color: #979797;
+        .sans2;
+        font-size: 22px;
+        font-weight: 400;
+        text-transform: none;
+        vertical-align: middle;
+
+        @media (max-width:@screen-md-max) and (min-width:@screen-md-min) {
+            font-size: 18px;
+        }
+    }
+    input[type="radio"], input[type="checkbox"] {
+        margin: 0 5px 5px;
+        vertical-align: middle;
+    }
+    input[type="radio"] + span, input[type="checkbox"] + span {
+        margin: 0 20px 0 10px;
+        vertical-align: middle;
+    }
+    input[type="submit"] {
+        clear: both;
+        float: left;
+    }
+    .box {
+        .make-sm-column(3);
+
+        &:nth-child(3n +1) {
+            clear: both;
+        }
+    }
+    p {
+        clear: both;
+        float: left;
+        margin: 75px 0 35px;
+
+        a {
+            color: @red;
+            text-decoration: underline;
+        }
+        &.sidenote {
+            @media (min-width:@screen-sm-min) {
+                margin: 0;
+                line-height: 60px;
+                vertical-align: middle;
             }
         }
     }

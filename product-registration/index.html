@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<title>Shindaiwa</title>
+	<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/style.css">
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" type="text/css" href="/css/ie8.css">
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="collapsed">
+	<div class="wrap">
+		<header>
+		<div id="header-top">
+			<div class="container">
+				<a class="logo" href="/"><img src="/images/logo.png" alt="Shindaiwa" /></a>
+				<img class="lithium" src="/images/logo-lithiumion.png" alt="Lithium Ion 56V" />
+				<div id="icons">
+					<ul class="social">
+						<li><a target="_blank" class="facebook" href="http://www.facebook.com/ShindaiwaUsa"></a></li>
+						<li><a target="_blank" class="youtube" href="http://www.youtube.com/ShindaiwaUsa"></a></li>
+						<li><a target="_blank" class="instagram" href="http://www.instagram.com/shindaiwausa"></a></li>
+					</ul>
+					<div id="search-bar">
+						<img id="search-icon" src="/images/icon-search-black.png" alt="" />
+						<input class="collapsed" type="text" id="search" name="search" placeholder="search..." />
+					</div>
+				</div>
+				<div id="nav-toggle-box">
+					<div id="nav-toggle">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<h6>menu</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="container">
+				<div id="backdrop" class="collapsed"></div>
+				<nav id="main-nav" class="collapsed">
+					<ul class="main-level">
+						<li class="mobile"><a href="/">Home</a></li>
+						<li class="parent">
+							<a class="desktop" href="javascript:void(0);">Products</a>
+							<a class="mobile" href="javascript:void(0);">Products</a>
+							<ul class="sub-level">
+								<li><a href="/t3000">Trimmer</a></li>
+								<li><a href="/eb6000">Blower</a></li>
+								<li><a href="/dh2000">Hedge Trimmer</a></li>
+							</ul>
+						</li>
+						<li><a href="/accessories">Accessories</a></li>
+						<li><a href="/technical-documents">Tech Docs</a></li>
+						<li class="active"><a href="/product-registration">Product Registration</a></li>
+						<li><a href="/faqs">FAQS</a></li>
+						<li><a href="#">Dealer Locator</a></li>
+						<li><a href="/contact-us">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="content" id="product-registration-page">
+			<div class="main">
+				<div class="fade-under">
+					<div class="container">
+						<h1>Product Registration</h1>
+					</div>
+				</div>
+				<div class="container">
+					<h2>Register Your Cordless</h2>
+					<h5>Enter the following information to register your product:</h5>
+					<span class="required">required</span>
+					<form action="" id="product-registration" method="post">
+						<div class="row">
+							<div class="col-sm-9">
+								<label class="inline required" for="first_name">First Name:</label>
+								<input type="text" name="first_name" id="first_name" />
+								<label class="inline required" for="last_name">Last Name:</label>
+								<input type="text" name="last_name" id="last_name" />
+								<label class="inline required" for="business">Business Name:</label>
+								<input type="text" name="business" id="business" />
+								<label class="inline required" for="address_1">Address:</label>
+								<input type="text" name="address_1" id="address_1" />
+								<label class="inline"></label>
+								<input type="text" name="address_2" id="address_2" />
+								<label class="inline required" for="city">City:</label>
+								<input type="text" name="city" id="city" />
+								<div class="double">
+									<label class="inline required" for="state">State:</label>
+									<select class="selectpicker" name="state" id="state">
+										<option value="0">-- Select --</option>
+									</select>
+									<label class="inline required" for="zip">Zip:</label>
+									<input type="text" name="zip" id="zip" />
+								</div>
+								<label class="inline" for="email">Email Address:</label>
+								<input type="email" name="email" id="email" />
+								<label class="inline" for="phone">Phone Number:</label>
+								<input type="tel" name="phoen" id="phone" />
+								<label class="inline required" for="purchase_date">Purchase Date:</label>
+								<input type="text" name="purchase_date" id="purchase_date" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-9">
+								<label class="inline required" for="purchase_location">Purchase Location:</label>
+								<input type="text" name="purchase_location" id="purchase_location" />
+							</div>
+							<div class="col-sm-3">
+								<p class="sidenote"><a href="#">Click Here</a> for Dealers</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-9">
+								<label class="inline required" for="modelno">Model Number:</label>
+								<input type="text" name="modelno" id="modelno" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-9">
+								<label class="inline required" for="serialno">Serial Number:</label>
+								<input type="text" name="serialno" id="serialno" />
+							</div>
+							<div class="col-sm-3">
+								<p class="sidenote">Can&rsquo;t Remember? <a href="#">Click Here</a></p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-9">
+								<label class="inline required" for="primary_use">Primary Use of Tool:</label>
+								<select class="selectpicker" name="primary_use" id="primary_use">
+									<option value="0">-- Select --</option>
+								</select>
+								<label class="required">Do you wish to receive periodic Shindaiwa product information and special offers?</label>
+								<input type="radio" name="offers" value="1"><span>Yes</span>
+								<input type="radio" name="offers" value="0"><span>No</span>
+								<label>Did you visit the Shindaiwa website before purchasing your product?</label>
+								<input type="radio" name="visit" value="1"><span>Yes</span>
+								<input type="radio" name="visit" value="0"><span>No</span>
+								<label>What factor(s) most influenced your purchase?</label>
+								<div class="box"><input type="checkbox" name="influence" value="performance"><span>Performance</span></div>
+								<div class="box"><input type="checkbox" name="influence" value="price"><span>Price</span></div>
+								<div class="box"><input type="checkbox" name="influence" value="dealer"><span>Dealer</span></div>
+								<div class="box"><input type="checkbox" name="influence" value="reliability"><span>Reliability</span></div>
+								<div class="box"><input type="checkbox" name="influence" value="experience"><span>Experience</span></div>
+								<div class="box"><input type="checkbox" name="influence" value="quality"><span>Quality</span></div>
+								<div class="box"><input type="checkbox" name="influence" value="recommendation"><span>Recommendation</span></div>
+								<div class="box"><input type="checkbox" name="influence" value="brand"><span>Brand</span></div>
+								<div class="box"><input type="checkbox" name="influence" value="warranty"><span>Warranty</span></div>
+								<p><strong>Confidentiality Notice:</strong> Information provided willl not be shared or sold. Registering your purchase enables us to contact you in the unlikely event of a service update or product recall and verifies your ownership in the event of loss.</p>
+								<input type="submit" class="btn btn-green" value="Submit Registration" />
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="footer-above mobile">
+			<div class="container">
+				<div class="half">
+					<a class="btn btn-red" href="/contact-us">Contact Us</a>
+				</div><div class="half">
+					<a class="btn btn-red" href="#">Store Locator</a>
+				</div>
+				<p>
+					<a href="/t3000">Trimmer</a>
+					<a href="/eb6000">Blower</a>
+					<a href="/dh2000">Hedge Trimmer</a>
+				</p>
+			</div>
+		</div>
+		<footer>
+			<div class="container">
+				<a class="logo desktop" href="/"><img src="/images/logo-small.png" alt="Shindaiwa" /></a>
+				<ul class="social mobile">
+					<li><a target="_blank" class="facebook" href="http://www.facebook.com/ShindaiwaUsa"></a></li>
+					<li><a target="_blank" class="youtube" href="http://www.youtube.com/ShindaiwaUsa"></a></li>
+					<li><a target="_blank" class="instagram" href="http://www.instagram.com/shindaiwausa"></a></li>
+				</ul>
+				<span>877.9.TORQUE</span>
+				<a href="/" class="desktop">www.shindaiwa-usa.com</a>
+				<a href="#" class="policy desktop">Privacy Policy</a>
+			</div>
+		</footer>
+	</div>
+
+	<link rel="stylesheet" property="stylesheet" type="text/css" href="/vendor/silviomoreto-bootstrap-select/bootstrap-select.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="/vendor/silviomoreto-bootstrap-select/bootstrap-select.min.js"></script>
+	<script type="text/javascript" src="/js/script.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('.selectpicker').selectpicker();
+	});
+	</script>
+</body>
+</html>
