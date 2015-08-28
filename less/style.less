@@ -1539,16 +1539,25 @@ ul.subline {
         clear: both;
         margin-top: 50px;
         padding-bottom: 100px;
+
+        @media (max-width:@screen-tb-max) {
+            margin-top: 15px;
+        }
     }
     label {
         display: block;
         clear: both;
         padding: 40px 0 15px;
+
+        @media (max-width:@screen-tb-max) {
+            padding: 35px 0 0 !important;
+            line-height: 1.3em;
+        }
     }
     span.required {
         float: right;
     }
-    .required, label, p, input[type="radio"] + span, input[type="checkbox"] + span {
+    .required, label, p, input[type="radio"] + span, input[type="checkbox"] + span, .chosen-results li {
         .sans2;
         color: @black;
         font-size: 25px;
@@ -1557,10 +1566,7 @@ ul.subline {
         @media (max-width:@screen-lg-max) and (min-width:@screen-lg-min) {
             font-size: 24px;
         }
-        @media (max-width:@screen-md-max) and (min-width:@screen-md-min) {
-            font-size: 19px;
-        }
-        @media (max-width:@screen-sm-max) and (min-width:@screen-sm-min) {
+        @media (max-width:@screen-md-max) and (min-width:@screen-sm-min) {
             font-size: 19px;
         }
     }
@@ -1575,7 +1581,7 @@ ul.subline {
             padding-bottom: 0;
         }
     }
-    label.inline + input, label.inline + select + .bootstrap-select {
+    label.inline + input, label.inline + .chosen-wrap {
         .make-sm-column(9);
     }
     .double {
@@ -1583,24 +1589,83 @@ ul.subline {
             .make-sm-column(3);
             clear: none;
         }
-        .bootstrap-select + label.inline {
+        .chosen-wrap + label.inline {
             .make-sm-column(1);
         }
-        label.inline + input, label.inline + select + .bootstrap-select {
+        label.inline + input, label.inline + .chosen-wrap {
             .make-sm-column(4);
         }
     }
-    .bootstrap-select {
+    .chosen-wrap {
         padding: 0 !important;
+        border: none;
     }
-    input[type="text"], input[type="email"], input[type="tel"], .bootstrap-select .btn {
+    .chosen-container {
+        width: 100% !important;
+        border: none !important;
+
+        .chosen-single {
+            height: 100%;
+            background: @white;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            box-shadow: none;
+            height: 60px;
+
+            span {
+                line-height: 60px;
+            }
+            b {
+                background: none;
+                border-top: 6px solid #d3d3d3;
+                border-bottom: 6px solid transparent;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                height: 0;
+                width: 0;
+                position: absolute;
+                top: 25px;
+                right: 15px;
+            }
+        }
+        .chosen-search {
+            input[type="text"] {
+                height: auto;
+                margin-bottom: 1px;
+                color: @black;
+            }
+        }
+        .chosen-drop {
+            border: 1px solid #dddddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        .chosen-results li {
+            line-height: 30px;
+
+            &.highlighted {
+                color: @white;
+                background: @red; /* Old browsers */
+                background: -moz-linear-gradient(top,  @red 20%, @darkred 90%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(20%,@red), color-stop(90%,@darkred)); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top, @red 20%,@darkred 90%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top, @red 20%,@darkred 90%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(top, @red 20%,@darkred 90%); /* IE10+ */
+                background: linear-gradient(to bottom, @red 20%,@darkred 90%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e31937', endColorstr='#b7071f',GradientType=0 ); /* IE6-9 */
+            }
+        }
+        &.chosen-with-drop {
+            box-shadow: 0 4px 5px rgba(0,0,0,.15);
+
+            .chosen-single {
+                border-radius: 5px 5px 0 0;
+            }
+        }
+    }
+    input[type="text"], input[type="email"], input[type="tel"], .chosen-container .chosen-single span {
         height: 60px;
-        margin-bottom: 20px;
-        border: 1px solid #dddddd;
-        border-radius: 5px;
         width: 100%;
-        box-shadow: none;
-        background: @white;
         color: #979797;
         .sans2;
         font-size: 22px;
@@ -1608,8 +1673,19 @@ ul.subline {
         text-transform: none;
         vertical-align: middle;
 
-        @media (max-width:@screen-md-max) and (min-width:@screen-md-min) {
+        @media (max-width:@screen-md-max) and (min-width:@screen-sm-min) {
             font-size: 18px;
+        }
+    }
+    input[type="text"], input[type="email"], input[type="tel"], .chosen-container {
+        margin-bottom: 20px;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        box-shadow: none;
+        background: @white;
+
+        @media (max-width:@screen-tb-max) {
+            margin-bottom: 0;
         }
     }
     input[type="radio"], input[type="checkbox"] {
@@ -1623,12 +1699,22 @@ ul.subline {
     input[type="submit"] {
         clear: both;
         float: left;
+
+        @media (max-width:@screen-tb-max) {
+            float: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
     .box {
-        .make-sm-column(3);
+        .make-lg-column(3);
+        .make-sm-column(4);
 
-        &:nth-child(3n +1) {
-            clear: both;
+        &:nth-child(3n+1) {
+            @media (min-width:@screen-lg-min) {
+                clear: both;
+            }
         }
     }
     p {
@@ -1641,10 +1727,19 @@ ul.subline {
             text-decoration: underline;
         }
         &.sidenote {
-            @media (min-width:@screen-sm-min) {
-                margin: 0;
+            margin: 0;
+
+            @media (max-width:@screen-sm-max) {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            @media (min-width:@screen-md-min) {
                 line-height: 60px;
                 vertical-align: middle;
+            }
+            @media (max-width:@screen-tb-max) {
+                margin-top: 25px;
             }
         }
     }
