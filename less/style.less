@@ -1689,8 +1689,9 @@ ul.subline {
         }
     }
     input[type="radio"], input[type="checkbox"] {
-        margin: 0 5px 5px;
+        margin: 0 0 3px;
         vertical-align: middle;
+        zoom: 2.0;
     }
     input[type="radio"] + span, input[type="checkbox"] + span {
         margin: 0 20px 0 10px;
@@ -1710,6 +1711,7 @@ ul.subline {
     .box {
         .make-lg-column(3);
         .make-sm-column(4);
+        padding: 0;
 
         &:nth-child(3n+1) {
             @media (min-width:@screen-lg-min) {
