@@ -69,3 +69,22 @@ header #main-nav ul.main-level {
         }
     }
 }
+#product-registration-page {
+    .required, label, p, input[type="radio"] + span, input[type="checkbox"] + span, .chosen-results li {
+        font-size: 22px;
+
+        @media (max-width:@screen-lg-max) and (min-width:@screen-lg-min) {
+            font-size: 20px;
+        }
+        @media (max-width:@screen-md-max) and (min-width:@screen-sm-min) {
+            font-size: 17px;
+        }
+    }
+    input[type="text"], input[type="email"], input[type="tel"], .chosen-container .chosen-single span {
+        font-size: 22px;
+
+        @media (max-width:@screen-md-max) and (min-width:@screen-sm-min) {
+            font-size: 17px;
+        }
+    }
+}
