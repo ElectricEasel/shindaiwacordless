@@ -63,7 +63,7 @@ $(window).load(function(){
 		if($(this).hasClass('expanded')) {
 			return 0;
 		}
-		$('main-nav ul.main-level > li').hide();
+		$('#main-nav ul.main-level > li').hide();
 		returnMenu.show();
 		$(this).show();
 		$(this).toggleClass('expanded');
@@ -72,7 +72,7 @@ $(window).load(function(){
 	returnMenu.click(function(){
 		$('#main-nav ul.sub-level').css('height','0');
 		parent.removeClass('expanded');
-		$('main-nav ul.main-level > li').show();
+		$('#main-nav ul.main-level > li').show();
 		returnMenu.hide();
 	});
 })
