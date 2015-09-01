@@ -35,39 +35,62 @@ $(window).load(function(){
 		$(this).attr('data-height',height);
 		$(this).css('height','0');
 	});
-	var parent = $('.parent');
+	$(window).resize(function(){
+		if($(window).innerWidth() > 767) {
+			return 0;
+		}
+		$('#main-nav ul.sub-level').each(function(){
+			if($(this).parent().hasClass('special')) {
+				return 0;
+			}
+			$(this).css('height','auto');
+			var height = $(this).height();
+			$(this).attr('data-height',height);
+			$(this).css('height','0');
+		});
+	});
+	var parent = $('.parent > a');
 	parent.click(function(){
-		if($(this).hasClass('special')) {
+		if($(window).innerWidth() > 767) {
+			return 0;
+		}
+		if($(this).parent('li').hasClass('special')) {
 			return 0;
 		}
 		var trueClass = false;
-		$(this).toggleClass('expanded');
+		$(this).parent('li').toggleClass('expanded');
 		$('#main-nav ul.sub-level').css('height','0');
-		var height = $(this).children('#main-nav ul.sub-level').attr('data-height');
-		if($(this).hasClass('expanded')) {
-			$(this).children('#main-nav ul.sub-level').css('height',height);
+		var height = $(this).parent('li').children('#main-nav ul.sub-level').attr('data-height');
+		if($(this).parent('li').hasClass('expanded')) {
+			$(this).parent('li').children('#main-nav ul.sub-level').css('height',height);
 			trueClass = true;
 		}
-		parent.removeClass('expanded');
+		parent.parent('li').removeClass('expanded');
 		if(trueClass) {
-			$(this).addClass('expanded');
+			$(this).parent('li').addClass('expanded');
+		}
+		if($(this).hasClass('parent-link')) {
+			return false;
 		}
 	});
 
-	var special = $('.parent.special');
+	var special = $('.parent.special > a');
 	var returnMenu = $('.back');
 	special.click(function(){
 		if($(window).innerWidth() > 767) {
 			return 0;
 		}
-		if($(this).hasClass('expanded')) {
-			return 0;
+		if($(this).parent('li').hasClass('expanded')) {
+			return false;
 		}
 		$('#main-nav ul.main-level > li').hide();
 		returnMenu.show();
-		$(this).show();
-		$(this).toggleClass('expanded');
-		$(this).children('#main-nav ul.sub-level').css('height','auto');
+		$(this).parent('li').show();
+		$(this).parent('li').toggleClass('expanded');
+		$(this).parent('li').children('#main-nav ul.sub-level').css('height','auto');
+		if($(this).hasClass('parent-link')) {
+			return false;
+		}
 	});
 	returnMenu.click(function(){
 		$('#main-nav ul.sub-level').css('height','0');

@@ -447,6 +447,7 @@ header {
                     position: absolute;
                     z-index: 9999;
                     top: 100%;
+                    left: 0;
                     background: @black;
                     overflow: hidden;
                     @media (min-width:@screen-sm-min) {
@@ -501,6 +502,9 @@ header {
                     a {
                         font-size: 16px;
                     }
+                    ul.sub-level li a {
+                        font-size: 14px;
+                    }
                 }
             }
             @media (max-width:@screen-md-max) and (min-width:@screen-md-min) {
@@ -510,6 +514,10 @@ header {
 
                     a {
                         font-size: 16px;
+                    }
+                    ul.sub-level li a {
+                        padding-left: 8px;
+                        font-size: 14px;
                     }
                 }
             }
@@ -523,8 +531,8 @@ header {
                         font-size: 12px;
                     }
                     ul.sub-level li a {
-                        padding-left: 8px;
-                        font-size: 13px;
+                        padding-left: 5px;
+                        font-size: 12px;
                     }
                 }
             }
