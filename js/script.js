@@ -51,9 +51,7 @@ $(window).load(function(){
 	});
 	var parent = $('.parent > a');
 	parent.click(function(){
-		if($(window).innerWidth() > 767) {
-			return 0;
-		}
+		var grandparent = $(this).parent('li');
 		if($(this).parent('li').hasClass('special')) {
 			return 0;
 		}
@@ -94,8 +92,22 @@ $(window).load(function(){
 	});
 	returnMenu.click(function(){
 		$('#main-nav ul.sub-level').css('height','0');
-		parent.removeClass('expanded');
+		parent.parent('li').removeClass('expanded');
 		$('#main-nav ul.main-level > li').show();
 		returnMenu.hide();
 	});
 })
+function equalHeights(columns) {
+	var maxHeight = 0;
+	columns.each(function(){
+		$(this).outerHeight('auto');
+		if ($(this).outerHeight() > maxHeight) {
+			maxHeight = $(this).outerHeight();
+		}
+	});
+	columns.each(function(){
+		if ($(this).outerHeight() <= maxHeight) {
+			$(this).outerHeight(maxHeight);
+		}
+	});
+}
